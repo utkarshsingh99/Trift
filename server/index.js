@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 app.use("/api", traveller);
 app.use("/api", creator);
 app.use("/api", preferredOptions);
-app.use("/api/auth", auth);
+app.use("/auth", auth);
 app.use("/api", payment);
 
 

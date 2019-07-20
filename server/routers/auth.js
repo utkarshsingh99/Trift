@@ -8,43 +8,64 @@ router.get("/test", (req, res) => res.send(" auth  is working"));
 
 router.post("/signup", (req, res) => {
   console.log(req.body, 'Initiating Sign Up')
-  if (Account.emailExists(req.body)) {
-    res.send(404)                                     // User Email Exists, not authorized to sign up
+  Account.emailExists(req.body)
+    .then(user => {
+      console.log(user)
+      if (user !== null) {
+        return res.send(404);
+      } else {
+        
+    /* ------- Hashing Password ---------- */
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(req.body.password, salt, (err, hashedPassword) => {
+          if (err) {
+            res.status(400).json({
+              signup: "Invalid password",
+              error: "Your password is invalid"
+            });
+          }
+          req.body.password = hashedPassword;
+          /* ----------- Add New User to Database ---------- */
+          Account.authSignup(req.body).then(user => {
+            if (user) {
+              res.sendStatus(200)                             // New User Created
+            } else {
+              res.sendStatus(403)                             // Forbidden. In case new User is not saved
+            }
+          }).catch(e => {
+            res.send(e);                                      // Invalid Input or Database malfunction
+          })
+        })
+    })
   }
-  Account.authSignup(req.body).then(user => {
-    if (user) {
-      res.sendStatus(200)                             // New User Created
-    } else {
-      res.sendStatus(403)                             // Forbidden. In case new User is not saved
-    }
-  }).catch(e => {
-    res.send(e);                                      // Invalid Input or Database malfunction
-  })
-});
-
+})
+})
 
 router.post("/login", (req, res) => {
 
-  db.executeQuery(query.isEmailExist(req.body), (err, response) => {
-
-    bcrypt.compare(req.body.password, response[0].password).then((match) => {
-      let data = response[0];
-      if (match) {
-        res.status(200).send({
-          userId: data.id,
-          email: data.email,
-          success: true,
-          message: "You have login successfully"
-        });
-      } else {
-        res.send({
-          email: 'Your Email or password is incorrect',
-          success: false,
-          message: "You had insert incorrect email or password"
+  Account.login(req.body)
+    .then(fullUser => {
+      if (fullUser !== undefined || fullUser !== null) {
+        bcrypt.compare(req.body.password, fullUser.password).then((match) => {
+          if (match) {
+            let user = Object.assign(fullUser, {password: undefined});
+            res.send(user);
+          } else {
+            return res.status(404).send({
+              email: 'Your Email or password is incorrect',
+              success: false,
+              message: "You had inserted incorrect email or password"
+            })
+          }
         })
+      } else {
+        return res.status(404).send({
+          email: 'Your Email was not found',
+          success: false,
+          message: "You had inserted incorrect email"
+        });
       }
-    });
-  });
+    })
 });
 
 module.exports = router;

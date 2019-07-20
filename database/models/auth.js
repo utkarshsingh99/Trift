@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const AccountSchema = new mongoose.Schema({
     id: Number,
-    fullName: String,
+    firstName: String,
+    lastName: String,
     email: String,
     password: String,
     profilePicture: String,
@@ -24,14 +25,12 @@ AccountSchema.statics.authSignup = function (data) {
     return newUser.save()
 }
 
-AccountSchema.statics.emailExists = function (data) {
-    Account.findOne({email: data.email}).then(user => {
-        if(user) {
-            return true;
-        } else {
-            return false;
-        }
-    })
+AccountSchema.statics.emailExists = async function (data) {
+    return Account.findOne({email: data.email})
+}
+
+AccountSchema.statics.login = function (data) {
+    return Account.findOne({email: data.email})
 }
 
     // let insertAuthSignup = `INSERT INTO 
