@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 // const db = require('../database/index');
 const path = require('path');
 
@@ -12,6 +13,7 @@ const app = express();
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.resolve('./public')))
 
+app.use(cors());
 // bodyParser MiddleWare
 app.use(bodyParser.urlencoded({
     extended: false

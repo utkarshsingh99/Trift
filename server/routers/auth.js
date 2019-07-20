@@ -66,6 +66,12 @@ router.post("/login", (req, res) => {
           message: "You had inserted incorrect email"
         });
       }
+    }).catch(e => {
+      return res.status(404).send({
+        email: 'Your Email was not found',
+        success: false,
+        message: "You had inserted incorrect email"
+      });
     })
 });
 
