@@ -1,0 +1,19 @@
+.formHeading{
+    display: flex; 
+    width:100%;
+    max-width:431px;
+  }
+
+.cross{
+    width:40px;
+    height:59px;
+    border:none;
+    background-color: white;
+    padding:0;
+}
+
+h3{
+    text-align:left;
+    display:flex;
+    align-items:center;
+}
