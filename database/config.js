@@ -16,4 +16,4 @@ const mongoose = require('mongoose');
 
 // });
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/trift_db', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/trift_db' || 'mongodb://utki:123456a@ds151817.mlab.com:51817/trift_db', { useNewUrlParser: true });
