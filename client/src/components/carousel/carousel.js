@@ -1,8 +1,17 @@
 import React from 'react';
 
+import axios from 'axios';
+
 import './carousel.css';
+
 class Carousel extends React.Component{
-  // imageURLs to show on sliding gallery on homepage
+  componentDidMount(){
+    axios.get("https://crossorigin.me/https://localhost:4000/images").then(response => {
+      console.log(response);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
     state ={
       imageURL :["https://www.solidbackgrounds.com/images/1920x1080/1920x1080-oxford-blue-solid-color-background.jpg"]
     }

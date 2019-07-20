@@ -26,6 +26,7 @@ const payment = require('./routers/payment');
 app.get("/", (req, res) => {
     res.send('it is working ...');
 })
+
 // use routes
 app.use("/api", traveller);
 app.use("/api", creator);
