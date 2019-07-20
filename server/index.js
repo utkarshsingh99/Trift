@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('../database/index');
+// const db = require('../database/index');
 const path = require('path');
+
+require('../database/config')
 
 const app = express();
 
@@ -28,7 +30,7 @@ app.get("/", (req, res) => {
 app.use("/api", traveller);
 app.use("/api", creator);
 app.use("/api", preferredOptions);
-app.use("/api", auth);
+app.use("/auth", auth);
 app.use("/api", payment);
 
 
