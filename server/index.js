@@ -5,9 +5,12 @@ const path = require('path');
 
 require('../database/config')
 
+const Images = require('../database/models/images')
+
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve('./public')))
 
 // bodyParser MiddleWare
 app.use(bodyParser.urlencoded({
@@ -26,11 +29,19 @@ const payment = require('./routers/payment');
 app.get("/", (req, res) => {
     res.send('it is working ...');
 })
+
+app.get('/images', (req, res) => {
+    Images.find({})
+        .then(images => {
+            res.send(images)
+        })
+})
+
 // use routes
 app.use("/api", traveller);
 app.use("/api", creator);
 app.use("/api", preferredOptions);
-app.use("/auth", auth);
+app.use("/api/auth", auth);
 app.use("/api", payment);
 
 
