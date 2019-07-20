@@ -1,0 +1,28 @@
+.navbar{
+    position: absolute;
+    top:0;
+    width:100%;
+    z-index:1;
+}
+
+.navbar-toggler{
+    margin-left:auto;
+}
+
+.link{
+    text-decoration: none;
+    color:black
+}
+
+a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+@media (max-width:992px){
+    .navbar{
+        position: relative;
+        width:100%;
+        z-index:0;
+    }
+}
