@@ -9,6 +9,11 @@ const AccountSchema = new mongoose.Schema({
     profilePicture: String,
     bannerPicture: String,
     description: String,
+    trips: [{
+        tripId: String,
+        tripName: String,
+        imageUrl: String,
+    }],
     DepartingCity_id: Number,
     residentCounty_id: Number,
     HomeTown_id: Number,
