@@ -53,24 +53,21 @@ router.post("/login", (req, res) => {
             res.send(user);
           } else {
             return res.status(404).send({
-              email: 'Your Email or password is incorrect',
-              success: false,
-              message: "You had inserted incorrect email or password"
+              message: 'Your Email or password is incorrect',
+              success: false
             })
           }
         })
       } else {
         return res.status(404).send({
-          email: 'Your Email was not found',
-          success: false,
-          message: "You had inserted incorrect email"
+          message: 'Your Email was not found',
+          success: false
         });
       }
     }).catch(e => {
       return res.status(404).send({
-        email: 'Your Email was not found',
-        success: false,
-        message: "You had inserted incorrect email"
+        message: 'Your Email was not found',
+        success: false
       });
     })
 });
