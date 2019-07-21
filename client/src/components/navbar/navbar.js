@@ -5,9 +5,24 @@ import {NavLink} from 'react-router-dom';
 
 import './navbar.css'
 
+import Search from '../Search/search';
+
 
 class navbar extends React.Component{
+  state={
+    width:document.body.clientWidth
+  }
+  componentDidMount(){
+    window.addEventListener('resize', () => {
+      this.setState({
+        width:document.body.clientWidth
+      })
+    })
+  }
+
+
     render(){
+      console.log(this.state)
         return(
   <Navbar  expand="lg" className="navbar">
   <Navbar.Brand href="/"><strong className="link">TRIFT</strong></Navbar.Brand>
@@ -19,6 +34,8 @@ class navbar extends React.Component{
       <NavLink className=" nav-link link" to="/Create-a-trip">Create a Trip</NavLink>
       <NavLink className="nav-link link" to="/Login">Login</NavLink>
       <NavLink className="nav-link link" to="/Signup">SignUp</NavLink>
+      {(this.state.width<969) ? <Search mobile="true"/> : null}
+      
     </Nav>
   </Navbar.Collapse>
 </Navbar>

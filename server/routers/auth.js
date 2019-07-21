@@ -43,7 +43,7 @@ router.post("/signup", (req, res) => {
 })
 
 router.post("/login", (req, res) => {
-
+console.log(req.body)
   Account.login(req.body)
     .then(fullUser => {
       if (fullUser !== undefined || fullUser !== null) {

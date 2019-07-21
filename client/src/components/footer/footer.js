@@ -1,15 +1,14 @@
 import React from 'react';
 
+import './footer.css';
+import Policies from './sub-components/Policies/policies';
+import Subscribe from './sub-components/Subscribe/Subscribe'
+
 const footer = () => {
     return(
-           <div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
+           <div className="footer">
+                <Policies/>
+                <Subscribe />
            </div>
         )
 }

@@ -6,15 +6,8 @@
     border: 1px solid #CACACA;
     border-radius: 4px;
     background: #FFFFFF;
-    margin-top:8px;
+    margin-bottom:8px;
+    border-left:none;
+    border-right:none;
+    border-top:none;
 }
-
-/* input{
-    max-width:431px;
-    height:40px;
-    border: 1px solid #CACACA;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background: #FFFFFF;
-    margin-top:8px;
-} */

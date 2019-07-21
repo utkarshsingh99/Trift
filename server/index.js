@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // const db = require('../database/index');
 const path = require('path');
+var cors = require('cors');
 
 require('../database/config')
 
@@ -12,6 +13,7 @@ const app = express();
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.resolve('./public')))
 
+app.use(cors());
 // bodyParser MiddleWare
 app.use(bodyParser.urlencoded({
     extended: false
@@ -36,6 +38,7 @@ app.get('/images', (req, res) => {
             res.send(images)
         })
 })
+
 
 // use routes
 app.use("/api", traveller);
