@@ -31,10 +31,10 @@ class SignUp extends React.Component{
           <div className="wrapper">
         <div className="formContent">
           <FormHeading heading="ABOUT YOU"/>
-          <form className="inputs formContain">
-              <Input type="file" placeholder="Upload your image" />
-              <Input type="text" placeholder="Dummy"/>
-              <Input type="text" placeholder="Dummy"/>
+          <form className="inputContain formContain">
+              <Input type="file" placeholder="Upload your image" class="inputs"/>
+              <Input type="text" placeholder="Dummy" class="inputs"/>
+              <Input type="text" placeholder="Dummy" class="inputs"/>
               <Button value="Signup"/>
           </form> 
         </div>
@@ -44,11 +44,11 @@ class SignUp extends React.Component{
           <div className="wrapper">
           <div className="formContent">
             <FormHeading heading="SIGNUP"/>
-            <form className="inputs formContain">
-                <Input type="text" placeholder="First Name" autofocus="true"/>
-                <Input type="text" placeholder="Last Name"/>
-                <Input type="email" placeholder="Email"/>
-                <Input type="password" placeholder="Password"/>
+            <form className="inputContain formContain">
+                <Input type="text" placeholder="First Name" class="inputs" autofocus="true"/>
+                <Input type="text" placeholder="Last Name" class="inputs" />
+                <Input type="email" placeholder="Email" class="inputs" />
+                <Input type="password" placeholder="Password" class="inputs" />
                 <Button value="NEXT" handleClick={this.UpdateState}/>
             </form> 
             <div className="formFooter">Already have an account 

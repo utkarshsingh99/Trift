@@ -11,7 +11,7 @@ class Btn extends React.Component{
                 <Button variant="primary" size="md" block className={this.props.class} onClick={this.props.handleClick}>
                     {this.props.value}
                 </Button>
-</div>
+            </div>
         )
     }
 }
