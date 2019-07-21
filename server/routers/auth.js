@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 // const db = require('../../database/index.js');
 const Account = require('../../database/models/auth');
+const Cities = require('../../database/models/city')
 const bcrypt = require('bcryptjs');
 
 router.get("/test", (req, res) => res.send(" auth  is working"));
@@ -42,7 +43,7 @@ router.post("/signup", (req, res) => {
 })
 
 router.post("/login", (req, res) => {
-
+console.log(req.body)
   Account.login(req.body)
     .then(fullUser => {
       if (fullUser !== undefined || fullUser !== null) {
@@ -67,6 +68,24 @@ router.post("/login", (req, res) => {
       }
     })
 });
+
+router.post('/emailexists', (req, res) => {
+  Account.emailExists(req.body)
+    .then(user => {
+      if(user === undefined || user === null) {
+        res.send(false);
+      } else {
+        res.send(true);
+      }
+    })
+})
+
+router.get('/cities', (req, res) => {
+  Cities.find({})
+    .then(cities => {
+      res.send(cities)
+    })
+})
 
 module.exports = router;
 

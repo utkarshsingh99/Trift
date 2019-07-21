@@ -25,7 +25,7 @@ AccountSchema.statics.authSignup = function (data) {
     return newUser.save()
 }
 
-AccountSchema.statics.emailExists = async function (data) {
+AccountSchema.statics.emailExists = function (data) {
     return Account.findOne({email: data.email})
 }
 

@@ -2,13 +2,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // const db = require('../database/index');
 const path = require('path');
+var cors = require('cors');
 
 require('../database/config')
 
+const Images = require('../database/models/images')
+
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve('./public')))
 
+app.use(cors());
 // bodyParser MiddleWare
 app.use(bodyParser.urlencoded({
     extended: false
@@ -27,11 +32,19 @@ app.get("/", (req, res) => {
     res.send('it is working ...');
 })
 
+app.get('/images', (req, res) => {
+    Images.find({})
+        .then(images => {
+            res.send(images)
+        })
+})
+
+
 // use routes
 app.use("/api", traveller);
 app.use("/api", creator);
 app.use("/api", preferredOptions);
-app.use("/auth", auth);
+app.use("/api/auth", auth);
 app.use("/api", payment);
 
 
