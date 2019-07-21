@@ -1,8 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const query = require('../../database/models/traveller');
+const Trips = require('../../database/models/trips')
 const db = require('../../database/index.js');
 
+router.get('/experience', (req, res) => {
+    Trips.find({}).sort({_id: -1}).limit(6).then(trips => {
+        res.send(trips)
+    })
+})  
 
 router.post("/insertAllTravellerInfo", (req, res) => {
 
@@ -49,7 +55,6 @@ router.post("/insertAllTravellerInfo", (req, res) => {
             }
         })
     })
-
 
     Promise.all([placeOfResidence, homeTown, favoritePlaces, travailedPlaces]).then((response) => {
         res.send({

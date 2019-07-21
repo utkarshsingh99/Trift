@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 // const db = require('../database/index');
 const path = require('path');
 var cors = require('cors');
@@ -50,4 +51,4 @@ app.use("/api", payment);
 
 const port = process.env.PORT || 4000;
 
-app.listen(port, () => console.log(`server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
