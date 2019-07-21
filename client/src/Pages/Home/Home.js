@@ -23,11 +23,9 @@ class Home extends React.Component{
             <Route exact path="/Signup" component={SignUp} />
           </div>
           <h5>CURATED EXPERIENCES</h5>
-          <div className="container">
-          <Destination url="http://pragatiresorts.com/wp-content/uploads/2018/10/Nature-walk-1.jpg"/>  
-          <Destination url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMlOx1_3bW6I6OVAbMaVZghAaz0LAQa3H4C2T4xJPy_qHvVfOxyg"/>  
-          </div>
+          <Destination id="curated"/>  
           <Card />
+          <Destination id="guided"/> 
           <Footer />
           </BrowserRouter>
           
