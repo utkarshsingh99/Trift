@@ -8,3 +8,9 @@
 .buttonContain{
     width:100%;
 }
+
+@media screen and (max-width:1010px){
+    .btn{
+        max-width:100%;
+    }
+}

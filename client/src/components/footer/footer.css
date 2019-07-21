@@ -7,10 +7,17 @@
 .list{
     list-style: none;
     margin:5px;
-    padding:15px;
+    padding:15px;}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .links{
+    width:50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -20,6 +27,11 @@
     margin:10px 50px;
 }
 
-.align{
-    display: flex;
+@media screen and (max-width:1010px){
+    .links{
+        width:100%;
+    }
+    .SubscribeContain{
+        margin:0 auto;
+    }
 }
