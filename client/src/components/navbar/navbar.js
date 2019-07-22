@@ -22,7 +22,6 @@ class navbar extends React.Component{
 
 
     render(){
-      console.log(this.state)
         return(
   <Navbar  expand="lg" className="navbar">
   <Navbar.Brand href="/"><strong className="link">TRIFT</strong></Navbar.Brand>

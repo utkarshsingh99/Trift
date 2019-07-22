@@ -6,6 +6,7 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/Signup';
 import Card from '../../components/Card/card';
 import Footer from '../../components/footer/footer';
+import curatedIcon from '../../utils/icons/Vector.png';
 
 import {BrowserRouter, Route} from 'react-router-dom';
 
@@ -22,12 +23,13 @@ class Home extends React.Component{
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={SignUp} />
           </div>
-          <h5>CURATED EXPERIENCES</h5>
-          <div className="container">
-          <Destination url="http://pragatiresorts.com/wp-content/uploads/2018/10/Nature-walk-1.jpg"/>  
-          <Destination url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMlOx1_3bW6I6OVAbMaVZghAaz0LAQa3H4C2T4xJPy_qHvVfOxyg"/>  
-          </div>
+          <h4 className="experienceText"><div className="experienceIcon"><img src={curatedIcon}/></div><strong>
+            CURATED EXPERIENCES</strong></h4>
+          <Destination id="curated"/>  
           <Card />
+          <h4 className="experienceText"><div className="experienceIcon"><i class="fa fa-bars" aria-hidden="true"></i></div><strong>
+            GUIDED EXPERIENCES</strong></h4>
+          <Destination id="guided"/> 
           <Footer />
           </BrowserRouter>
           

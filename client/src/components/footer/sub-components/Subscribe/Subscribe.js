@@ -10,8 +10,13 @@ const subscribe = () => {
                <div>
                    <h5>Subscribe and get 50 off your first booking</h5>
                     <Input placeholder="Enter email" id="SubscribeEmail"  type="email"/>
-                    <Button value="Subscribe" class="mt-4"/>
+                    <Button value="SUBSCRIBE" class="mt-4"/>
                </div>
+               {/* <div>
+                   <h5>Subscribe and get 50 off your first booking</h5>
+                    <Input placeholder="Enter email" id="SubscribeEmail"  type="email"/>
+                    <Button value="SUBSCRIBE" class="mt-4"/>
+               </div> */}
            </div>
         )
 }
