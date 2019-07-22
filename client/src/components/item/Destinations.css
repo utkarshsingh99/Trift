@@ -1,6 +1,9 @@
+.card {
+    word-wrap: unset;
+}
+
 .card-img-top{
     height: 24rem;
-    width:24rem;
 }
 
 .destinations{
@@ -12,37 +15,28 @@
 .singleItem{
     margin:0 3vw;
     border:none;
+    
+}
+.singleItem:hover{
+    border:1px solid lightgrey;
+    box-shadow: 5px 10px 18px lightgrey; 
+    animation-name:hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
-@media screen and (max-width:992px){
-    .card-img-top{
-        height: 13rem;
+
+@keyframes hover{
+    from{
+        transform: scale(1);
     }
-    .duration{
-        width:100%;
+    to{
+        transform: scale(1.1);
     }
 }
 
-@media screen and (max-width:768px){
-    .card-img-top{
-        height: 10rem;
-    }
-  
-}
 
-@media screen and (max-width:576px){
-    .card-img-top{
-        height: 7rem;
-    }
 
-}
-
-@media screen and (max-width:400px){
-    .card-img-top{
-        height: 5rem;
-    }
-   
-}
 
 
 .card-body{
@@ -51,7 +45,8 @@
 }
 
 .duration{
-    width:5vw;
+    width:8vw;
+    font-size:1rem;
 }
 
 .card-title{
@@ -63,4 +58,80 @@
     font-size:1.10rem;
     margin:0.25rem;
     font-weight: 500;
+}
+
+@media screen and (max-width:1200px){
+    .card-img-top{
+        height: 20rem;
+    }
+    
+}
+
+@media screen and (max-width:1024px){
+    .duration{
+        font-size:0.90rem;
+        width:10vw;
+    }
+    .card-img-top{
+        height: 15rem;
+    }
+    .adjust-title-font{
+        font-size:1.00rem;
+        font-weight: 500;
+    }
+    .adjust-price-font{
+        font-size:0.90rem;
+    }
+    
+}
+
+@media screen and (max-width:768px){
+    .card-img-top{
+        height: 12rem;
+    }
+    .duration{
+        font-size:0.80rem;
+        width:13vw;
+    }
+    .adjust-title-font{
+        font-size:0.90rem;
+        font-weight: 500;
+    }
+    .adjust-price-font{
+        font-size:0.80rem;
+    }
+  
+}
+
+@media screen and (max-width:576px){
+    .card-img-top{
+        height: 10rem;
+    }
+    .duration{
+        font-size:0.70rem;
+        width:15vw;
+    }
+    .adjust-title-font{
+        font-size:0.80rem;
+        font-weight: 500;
+    }
+    .adjust-price-font{
+        font-size:0.70rem;
+    }
+}
+
+
+@media screen and (max-width:400px){
+    .card-img-top{
+        height: 5rem;
+    }
+    .adjust-title-font{
+        font-size:0.70rem;
+        font-weight: 500;
+    }
+    .adjust-price-font{
+        font-size:0.60rem;
+        
+    }
+   
 }

@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Button, Card} from 'react-bootstrap';
 import loader from '../../utils/spinner/loader.apng';
 
+
 import './Destinations.css'
 
 
@@ -54,151 +55,44 @@ class Destination extends React.Component{
             <div className="destinations">
                 {this.state.experiences.guided.data.map(item => {
                    return (
-                    <Card className="singleItem" style={{ width: '20rem' }}>
+                    <Card className="singleItem" style={{ width: '24rem' }}>
                     <Card.Img variant="top" src={item.image} />
-                    
                     <Card.Body>
                     <Button className="duration" variant="primary">{item.duration}</Button>
                     <Card.Title>
-                    <strong>{item.tripName}</strong>
+                    <strong className="adjust-title-font">{item.tripName}</strong>
                     </Card.Title>
-                        <Card.Text>
+                        <Card.Text className="adjust-price-font">
                          From ${item.totalValue}
                      </Card.Text>
                       
                      </Card.Body>
                      </Card>
                     )
-                   
-
-
-
                 })}
-
-
-
-
-
-
-
-
-
-
-
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//             <div>
-//                  <Card style={{ width: '16rem' }}>
-//             { this.state.experiences.guided.data.map(item => {
-//                 return (item.image) ?  <Card.Img variant="top" src={this.props.url}/> :  <Card.Img className="adjustLoader" variant="top" src={loader} />
-            
-//             }
-//             )}
-//          <Card.Body>
-//     <Card.Title>{this.state.experiences.guided.data.tripName}</Card.Title>
-//     <Card.Text>
-//      Hey
-//     </Card.Text>
-//     <Button variant="primary">4 days</Button>
-//   </Card.Body>
-// </Card>
-//             </div> 
-           
     ) : ( 
         <div className="destinations">
             {this.state.experiences.guided.data.map(item => {
                return (
-                <Card className="singleItem" style={{ width: '20rem' }}>
+                <Card className="singleItem" style={{ width: '24rem' }}>
                 <Card.Img variant="top" src={item.image} />
                 
                 <Card.Body>
                 <Button className="duration" variant="primary">{item.duration}</Button>
                 <Card.Title>
-                <strong>{item.tripName}</strong>
+                <strong className="adjust-title-font">{item.tripName}</strong>
                 </Card.Title>
-                    <Card.Text>
+                    <Card.Text className="adjust-price-font">
                      From ${item.totalValue}
                  </Card.Text>
                   
                  </Card.Body>
                  </Card>
                 )
-               
-
-
-
             })}
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//             <div>
-//                  <Card style={{ width: '16rem' }}>
-//             { this.state.experiences.guided.data.map(item => {
-//                 return (item.image) ?  <Card.Img variant="top" src={this.props.url}/> :  <Card.Img className="adjustLoader" variant="top" src={loader} />
-        
-//             }
-//             )}
-//          <Card.Body>
-//     <Card.Title>{this.state.experiences.guided.data.tripName}</Card.Title>
-//     <Card.Text>
-//      Hey
-//     </Card.Text>
-//     <Button variant="primary">4 days</Button>
-//   </Card.Body>
-// </Card>
-//             </div> 
-       
-);
+        </div>);
     }
 }
 

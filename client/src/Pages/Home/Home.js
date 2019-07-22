@@ -6,6 +6,7 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/Signup';
 import Card from '../../components/Card/card';
 import Footer from '../../components/footer/footer';
+import curatedIcon from '../../utils/icons/Vector.png';
 
 import {BrowserRouter, Route} from 'react-router-dom';
 
@@ -22,9 +23,12 @@ class Home extends React.Component{
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={SignUp} />
           </div>
-          <h5>CURATED EXPERIENCES</h5>
+          <h4 className="experienceText"><div className="experienceIcon"><img src={curatedIcon}/></div><strong>
+            CURATED EXPERIENCES</strong></h4>
           <Destination id="curated"/>  
           <Card />
+          <h4 className="experienceText"><div className="experienceIcon"><i class="fa fa-bars" aria-hidden="true"></i></div><strong>
+            GUIDED EXPERIENCES</strong></h4>
           <Destination id="guided"/> 
           <Footer />
           </BrowserRouter>

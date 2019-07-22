@@ -1,0 +1,36 @@
+.adjust-helloTrift-cover{
+    width:85%;
+    margin:4rem auto;
+}
+
+
+
+@media screen and (max-width:1024px){
+    .adjust-helloTrift-cover{
+        width:85%;
+        margin:3rem auto;
+    }
+    
+}
+
+@media screen and (max-width:768px){
+    .adjust-helloTrift-cover{
+        width:85%;
+        margin:2.5rem auto;
+    }
+}
+
+@media screen and (max-width:576px){
+    .adjust-helloTrift-cover{
+        width:90%;
+        margin:1.5rem auto;
+    }
+}
+
+
+@media screen and (max-width:400px){
+    .adjust-helloTrift-cover{
+        width:100%;
+        margin:1.5rem auto;
+    }
+}

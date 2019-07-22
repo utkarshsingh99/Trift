@@ -1,19 +1,23 @@
 .footer{
     display: flex;
     flex-wrap: wrap;
+    border-top:1px solid lightgrey;
+    padding:25px 0;
+    margin-top:80px;
 }
 
 
 .list{
     list-style: none;
     margin:5px;
-    padding:15px;}
+    padding:15px;
+}
 
 .col{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .links{
@@ -25,6 +29,7 @@
 
 .SubscribeContain{
     margin:10px 50px;
+    display: flex;
 }
 
 @media screen and (max-width:1010px){
@@ -34,4 +39,8 @@
     .SubscribeContain{
         margin:0 auto;
     }
+}
+
+h6{
+    font-weight:550;
 }
