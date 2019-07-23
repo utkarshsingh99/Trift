@@ -23,10 +23,16 @@
 
 .searchInput{
     border:none;
-    width:20vw
+    width:20vw;
 }
 
-@media (max-width:980px){
+@media screen and (min-width:980px){
+    .icon{
+      width:40px;
+    }
+}
+
+@media screen and (max-width:980px){
     .searchContain{
         display: none;
     }
@@ -34,6 +40,11 @@
         width:100%;
         display: flex;
         flex-direction: row;
+    }
+    .icon{
+        padding-right:0.5rem;
+        height:40px;
+        border-radius: 5px;
     }
 }
 

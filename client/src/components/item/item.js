@@ -85,7 +85,7 @@ class Destination extends React.Component{
                 <strong className="adjust-title-font">{item.tripName}</strong>
                 </Card.Title>
                     <Card.Text className="adjust-price-font">
-                     From ${item.totalValue}
+                     From <span className="color">${item.totalValue}</span>
                  </Card.Text>
                   
                  </Card.Body>

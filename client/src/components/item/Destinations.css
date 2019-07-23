@@ -55,10 +55,13 @@
 }
 
 .card-text{
-    font-size:1.10rem;
+    font-size:1.0rem;
     margin:0.25rem;
-    font-weight: 500;
+    font-weight: 450;
+    color: green;
 }
+
+
 
 @media screen and (max-width:1200px){
     .card-img-top{
@@ -123,15 +126,20 @@
 
 @media screen and (max-width:400px){
     .card-img-top{
-        height: 5rem;
+        height: 8rem;
     }
     .adjust-title-font{
         font-size:0.70rem;
         font-weight: 500;
     }
+    .h5{
+        line-height: 1 !important;
+    }
     .adjust-price-font{
         font-size:0.60rem;
-        
+    }
+    .duration{
+        width:18vw;
     }
    
 }
