@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 // const db = require('../../database/index.js');
-const Account = require('../../database/models/auth');
-const Cities = require('../../database/models/city')
+const Account = require('../../database/models/auth')
 const bcrypt = require('bcryptjs');
 
 router.get("/test", (req, res) => res.send(" auth  is working"));
@@ -80,13 +79,6 @@ router.post('/emailexists', (req, res) => {
       } else {
         res.send(true);
       }
-    })
-})
-
-router.get('/cities', (req, res) => {
-  Cities.find({})
-    .then(cities => {
-      res.send(cities)
     })
 })
 
