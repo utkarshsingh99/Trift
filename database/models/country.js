@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const citySchema = new mongoose.Schema({
+const countrySchema = new mongoose.Schema({
     Name: String,
     ID: String,
     CountryCode: String,
@@ -8,6 +8,6 @@ const citySchema = new mongoose.Schema({
     Population: String
 })
 
-const Cities = mongoose.model('cities', citySchema)
+const Countries = mongoose.model('Countries', countrySchema)
 
-module.exports = Cities
+module.exports = Countries
