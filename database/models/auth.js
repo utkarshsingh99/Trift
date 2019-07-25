@@ -15,7 +15,7 @@ const AccountSchema = new mongoose.Schema({
         imageUrl: String,
     }],
     DepartingCity_id: String,
-    residentCounty_id: String,
+    residentCountry_id: String,
     HomeTown_id: String,
     id_Roles: Number,
     id_Personalities: Number,
