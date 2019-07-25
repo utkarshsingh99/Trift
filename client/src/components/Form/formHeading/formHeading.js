@@ -7,7 +7,7 @@ class formHeading extends React.Component {
         return (
             <div  className="formHeading">
                 <h3>{this.props.heading}</h3>
-                <button className="cross ml-auto"><a className="anchor" href="/"><i class="fa fa-times fa-lg"></i></a></button>
+                <button className="cross ml-auto"><a className="anchor" href="/"><i className="fa fa-times fa-lg"></i></a></button>
           </div>
         )
     }

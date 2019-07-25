@@ -1,0 +1,30 @@
+.sponsor-image{
+    width:7.5rem;
+    height:4rem;
+    background: white;
+    margin-top:1rem;
+}
+
+@media (max-width:1200px){
+    .sponsor-image{
+        width:6rem;
+        height:3rem;
+        margin-top:0.8rem;
+    }
+}
+
+@media (max-width:768px){
+    .sponsor-image{
+        width:3rem;
+        height:2rem;
+        margin-top:0.6rem;
+    }
+}
+
+@media (max-width:400px){
+    .sponsor-image{
+        width:2.5rem;
+        height:1rem;
+        margin-top:0.4rem;
+    }
+}

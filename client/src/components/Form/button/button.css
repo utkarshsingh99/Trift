@@ -1,5 +1,4 @@
 .btn{
-    max-width:431px;
     width:100%;
     background-color: hsl(0, 0%, 0%);
     border-radius:4px;
@@ -11,6 +10,6 @@
 
 @media screen and (max-width:1010px){
     .btn{
-        max-width:100%;
+        /* max-width:100%; */
     }
 }

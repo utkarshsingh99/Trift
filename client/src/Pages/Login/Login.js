@@ -4,6 +4,8 @@ import Input from '../../components/Form/input/input';
 import Button from '../../components/Form/button/button';
 import FormHeading from '../../components/Form/formHeading/formHeading';
 
+import {NavLink} from 'react-router-dom';
+
 import './Login.css';
 import axios from 'axios';
 
@@ -16,6 +18,8 @@ class Login extends React.Component{
   loginHandler = () => {
     axios.post('http://localhost:4000/api/auth/login', this.state).then(response => {
       console.log(response);
+    }).catch(err => {
+      console.log(err);
     })
   }
 
@@ -39,8 +43,8 @@ class Login extends React.Component{
                   </div>
                   <Button value="Login" class="fadeIn third" handleClick={this.loginHandler}/>
                 </form> 
-                <div className="formFooter">Dont't you have an account? 
-                <a className="anchor" href="/Signup"><strong>Sign Up</strong></a>
+                <div className="formFooter">Dont't you have an account?&nbsp;
+                <NavLink className="anchor" to="/Signup"><strong>Sign Up</strong></NavLink>
                 </div>      
               </div>
           </div>  

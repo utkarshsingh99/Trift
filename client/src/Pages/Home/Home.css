@@ -9,8 +9,9 @@
 h4{
     display: flex;
     justify-content: center;
-    margin-top:10px;
-    padding:20px;
+    margin-top:5rem;
+    padding:2rem;
+    letter-spacing: 0.15rem;
     align-items: center;
 }
 
@@ -22,7 +23,7 @@ h4{
 }
 
 strong{
-    font-weight: 500;
+    font-weight: 550;
 }
 
 @media screen and (max-width:1024px){
