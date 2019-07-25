@@ -17,11 +17,11 @@ class Destination extends React.Component{
                data:[]
            }
        }
+       
     }
     
     componentDidMount(){
         axios.get('http://localhost:4000/api/experience').then(response => {
-            console.log(response)
             let curated=[], guided=[];
             let server = 'http://localhost:4000';
             response.data.map(item => {
@@ -74,7 +74,7 @@ class Destination extends React.Component{
 
     ) : ( 
         <div className="destinations">
-            {this.state.experiences.guided.data.map(item => {
+            {this.state.experiences.curated.data.map(item => {
                return (
                 <Card className="singleItem" style={{ width: '24rem' }} key={item._id}>
                 <Card.Img variant="top" src={item.image} />

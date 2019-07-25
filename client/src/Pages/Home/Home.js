@@ -25,7 +25,7 @@ class Home extends React.Component{
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={SignUp} />
           </div>
-          <h4 className="experienceText"><div className="experienceIcon"><img src={curatedIcon} alt=""/></div><strong>
+          <h4 className="experienceText"><div className="experienceIcon"><i className="fas fa-crown" aria-hidden="true"></i></div><strong>
             CURATED EXPERIENCES</strong></h4>
           <Destination id="curated"/>  
           <Card />

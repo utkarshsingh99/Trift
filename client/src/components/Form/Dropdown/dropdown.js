@@ -4,14 +4,22 @@ import axios from 'axios';
 
 class LanguageDropdown extends React.Component{
   state={
-    
+    languages:[]
+  }
+  componentDidMount(){
+    axios.get('http://localhost:4000/api/languages').then(res => {
+      this.setState({
+        languages:[...res.data]
+      })
+    }).catch(err => {
+      console.log(err)
+    })
   }
     render(){
         return(<select name="language" className={this.props.class}>
-              <option value="volvo">ENG</option>
-              <option value="saab">RUS</option>
-              <option value="mercedes">CHN</option>
-              <option value="audi">SPN</option>
+            {this.state.languages.map(item => {
+                return <option  key={item._id}>{item.Language}</option>
+              })}  
       </select>
            )
     }
@@ -19,14 +27,23 @@ class LanguageDropdown extends React.Component{
 
 class CurrencyDropdown extends React.Component{
   state={
-    
+    currencies:[]
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:4000/api/currencies').then(res => {
+      this.setState({
+        currencies:[...res.data]
+      })
+    }).catch(err => {
+      console.log(err)
+    })
   }
     render(){
-        return(<select name="language" className={this.props.class}>
-              <option value="volvo"></option>
-              <option value="saab">RUS</option>
-              <option value="mercedes">CHN</option>
-              <option value="audi">SPN</option>
+        return(<select name="currency" className={this.props.class}>
+            {this.state.currencies.map(item => {
+                return <option  key={item._id}>{item.cc}</option>
+              })}  
       </select>
            )
     }
@@ -38,7 +55,6 @@ class CountryDropdown extends React.Component{
   }
   componentDidMount(){
     axios.get('http://localhost:4000/api/countries').then(res => {
-      console.log(res)
       let countries = [...res.data];
       this.setState({
           countries:[...countries]

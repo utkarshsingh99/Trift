@@ -12,6 +12,10 @@
     display: flex;
 }
 
+.agreeText{
+    font-weight: 450
+}
+
 .dropdown-style{
     border:none;
     appearance: none;

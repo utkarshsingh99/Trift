@@ -18,6 +18,8 @@ class Login extends React.Component{
   loginHandler = () => {
     axios.post('http://localhost:4000/api/auth/login', this.state).then(response => {
       console.log(response);
+    }).catch(err => {
+      console.log(err);
     })
   }
 
@@ -41,7 +43,7 @@ class Login extends React.Component{
                   </div>
                   <Button value="Login" class="fadeIn third" handleClick={this.loginHandler}/>
                 </form> 
-                <div className="formFooter">Dont't you have an account? 
+                <div className="formFooter">Dont't you have an account?&nbsp;
                 <NavLink className="anchor" to="/Signup"><strong>Sign Up</strong></NavLink>
                 </div>      
               </div>

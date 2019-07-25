@@ -12,9 +12,10 @@ const footer = () => {
                 <Subscribe />
            </div>
             <div className="copyright">
-            <p className="text">
-            2019 © trift experiences OÜ. All Rights Reserved Harju Maakond, Kuusalu Vald, Pudisoo Küla, Männimäe 74626, Estonia 
-            </p>
+            <div className="text">
+               <p className="mb-0">2019 © trift experiences OÜ. All Rights Reserved </p>
+               <p className="mb-0">Harju Maakond, Kuusalu Vald, Pudisoo Küla, Männimäe 74626, Estonia </p>
+            </div>
             
             </div>
          </div>

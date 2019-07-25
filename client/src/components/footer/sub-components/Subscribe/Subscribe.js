@@ -16,7 +16,7 @@ const subscribe = () => {
                <Input placeholder="Enter email" type="email" class="w-100"/>
                </div>
                <div className="w-50 d-flex justify-content-center px-4">
-               <CurrencyDropdown class="px-2" id="currency"/>
+               <CurrencyDropdown class="element-width px-2" id="currency"/>
                </div>
                    
                </div>
@@ -25,7 +25,7 @@ const subscribe = () => {
                <button type="button" className="btn btn-primary w-100 px-2 mt-2">SUBSCRIBE</button>  
                 </div>
                 <div className="w-50 d-flex justify-content-center px-4">
-                <LanguageDropdown class="px-2 mt-2" id="language"/>
+                <LanguageDropdown class="element-width px-2 mt-2" id="language"/>
                 </div>
                   
                </div>

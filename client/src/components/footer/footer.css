@@ -10,7 +10,9 @@
     display:flex;
     width:100%;
 }
-
+.element-width{
+    width:90%;
+}
 .copyright{
     padding:2rem;
     padding-top:0;
@@ -19,6 +21,7 @@
 .text{
     border-top:1px solid lightgrey;
 }
+
 
 .heading-adjust{
     padding-bottom:1.5rem;
