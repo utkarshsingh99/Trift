@@ -32,7 +32,7 @@ class navbar extends React.Component{
       <NavLink className=" nav-link link" to="/Experience">Experiences</NavLink>
       <NavLink className=" nav-link link" to="/Create-a-trip">Create a Trip</NavLink>
       <NavLink className="nav-link link" to="/Login">Login</NavLink>
-      <NavLink className="nav-link link" to="/Signup">SignUp</NavLink>
+      <NavLink className="nav-link link box-around" to="/Signup">SignUp</NavLink>
       {(this.state.width<969) ? <Search mobile="true"/> : null}
       
     </Nav>

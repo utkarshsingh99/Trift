@@ -4,6 +4,8 @@ import Input from '../../components/Form/input/input';
 import Button from '../../components/Form/button/button';
 import FormHeading from '../../components/Form/formHeading/formHeading';
 
+import {NavLink} from 'react-router-dom';
+
 import './Login.css';
 import axios from 'axios';
 
@@ -40,7 +42,7 @@ class Login extends React.Component{
                   <Button value="Login" class="fadeIn third" handleClick={this.loginHandler}/>
                 </form> 
                 <div className="formFooter">Dont't you have an account? 
-                <a className="anchor" href="/Signup"><strong>Sign Up</strong></a>
+                <NavLink className="anchor" to="/Signup"><strong>Sign Up</strong></NavLink>
                 </div>      
               </div>
           </div>  

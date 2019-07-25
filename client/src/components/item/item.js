@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 import {Button, Card} from 'react-bootstrap';
-import loader from '../../utils/spinner/loader.apng';
 
 
 import './Destinations.css'
@@ -22,8 +21,8 @@ class Destination extends React.Component{
     
     componentDidMount(){
         axios.get('http://localhost:4000/api/experience').then(response => {
+            console.log(response)
             let curated=[], guided=[];
-            console.log(response.data);
             let server = 'http://localhost:4000';
             response.data.map(item => {
                 if(item.type === 'guided'){
@@ -34,6 +33,7 @@ class Destination extends React.Component{
                     item.image = server + item.image;
                     curated.push(item)
                 }
+                return null;
             });
             this.setState({
                 experiences:{
@@ -55,7 +55,7 @@ class Destination extends React.Component{
             <div className="destinations">
                 {this.state.experiences.guided.data.map(item => {
                    return (
-                    <Card className="singleItem" style={{ width: '24rem' }}>
+                    <Card className="singleItem" style={{ width: '24rem' }} key={item._id}>
                     <Card.Img variant="top" src={item.image} />
                     <Card.Body>
                     <Button className="duration" variant="primary">{item.duration}</Button>
@@ -76,7 +76,7 @@ class Destination extends React.Component{
         <div className="destinations">
             {this.state.experiences.guided.data.map(item => {
                return (
-                <Card className="singleItem" style={{ width: '24rem' }}>
+                <Card className="singleItem" style={{ width: '24rem' }} key={item._id}>
                 <Card.Img variant="top" src={item.image} />
                 
                 <Card.Body>

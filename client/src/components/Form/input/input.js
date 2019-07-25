@@ -8,7 +8,7 @@ import './input.css'
 class input extends React.Component{
     render(){
         return(
-          <Form.Control className={this.props.class} type={this.props.type} placeholder={this.props.placeholder} autoFocus={this.props.autofocus} onChange={this.props.change} id={this.props.id}/> 
+          <Form.Control className={this.props.class} type={this.props.type} placeholder={this.props.placeholder} autoFocus={this.props.autofocus} onChange={this.props.change} id={this.props.id} name={this.props.name}/> 
         )
     }
 }

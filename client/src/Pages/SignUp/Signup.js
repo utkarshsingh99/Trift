@@ -4,6 +4,8 @@ import React from 'react';
 import Input from '../../components/Form/input/input';
 import Button from '../../components/Form/button/button';
 import FormHeading from '../../components/Form/formHeading/formHeading';
+import {CountryDropdown, CitiesDropdown} from '../../components/Form/Dropdown/dropdown';
+import {NavLink} from 'react-router-dom';
 
 import icon from '../../utils/icons/dummy.png';
 
@@ -17,11 +19,10 @@ class SignUp extends React.Component{
   imgName:'Upload you picture',
    about: false,
    profile:{
-     profileImg:null
+     profilePicture:null
    }
   }
-
-
+  
 
   next = () => {
     this.setState({
@@ -33,7 +34,7 @@ class SignUp extends React.Component{
   UpdateState = (e) => {
     let id = e.target.id;
       let value = e.target.value;
-    if(e.target.id === 'profileImg'){
+    if(e.target.id === 'profilePicture'){
         let file = e.target.files[0];
         let baseString;
         var reader = new FileReader();	
@@ -41,7 +42,7 @@ class SignUp extends React.Component{
           baseString = reader.result;
           this.setState(prev =>({
             profile:{
-              ...prev,
+              ...prev.profile,
               [id]:baseString
             },
             imgName:file.name
@@ -53,7 +54,7 @@ class SignUp extends React.Component{
         
       return;
     }
-    
+
      this.setState(previousState => ({
       profile:{
         ...previousState.profile,
@@ -65,21 +66,25 @@ class SignUp extends React.Component{
 
   
     render(){
-      console.log(this.state)
         return (this.state.about) ? (
           <div className="wrapper">
         <div className="formContent">
           <FormHeading heading="ABOUT YOU"/>
           <form className="inputContain formContain">
-          <img id="profileImage" src={(this.state.profile.profileImg) ? (this.state.profile.profileImg) : icon}/>
-          <label htmlFor="profileImg" class="custom-file-upload">
+          <img id="profileImage" src={(this.state.profile.profileImg) ? (this.state.profile.profileImg) : icon} alt=""/>
+          <label htmlFor="profilePicture" className="custom-file-upload">
           <div id="profilePlaceholder">{this.state.imgName}</div><div  id="uploadIcon">
-          <i class="fa fa-cloud-upload"></i>
+          <i className="fa fa-cloud-upload"></i>
           </div>
           </label>
-              <Input type="file" placeholder="Upload your image" class="inputs profileImage" id="profileImg" change={this.UpdateState}/>
-              <Input type="text" placeholder="Dummy" class="inputs"/>
-              <Input type="text" placeholder="Dummy" class="inputs"/>
+              <Input type="file" placeholder="Upload your image" class="inputs profileImage" id="profilePicture" change={this.UpdateState}/>
+              <div className="w-100">
+              <CountryDropdown  id="residentCountry_id" class="w-100 mb-4 dropdown-style" change={this.UpdateState}/>
+              </div>
+              <div className="w-100">
+              <CitiesDropdown id="DepartingCity_id" class="w-100 mb-4 dropdown-style" change={this.UpdateState}/>
+              </div>
+              
               <Button value="Signup"/>
           </form> 
         </div>
@@ -97,7 +102,7 @@ class SignUp extends React.Component{
                 <Button value="NEXT" handleClick={this.next}/>
             </form> 
             <div className="formFooter">Already have an account 
-            <a className="anchor" href="/Login"><strong>Login</strong></a>
+            <NavLink className="anchor" to="/Login"><strong>Login</strong></NavLink>
             </div>      
           </div>
       </div>  
