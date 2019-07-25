@@ -19,7 +19,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
+// app.use(bodyParser({ limit: '50mb' }))
+// app.use(express.limit(100000000));
 
 // Routes
 const traveller = require('./routers/traveller');
