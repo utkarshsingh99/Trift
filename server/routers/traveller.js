@@ -8,10 +8,17 @@ const Trips = require('../../database/models/trips')
 const Partners = require('../../database/models/partners')
 const Cities = require('../../database/models/city')
 const Countries = require('../../database/models/country')
+const Currencies = require('../../database/models/currencies')
 
 router.get('/experience', (req, res) => {
     Trips.find({}).sort({_id: -1}).limit(6).then(trips => {
         res.send(trips)
+    })
+})
+
+router.get('/currencies', (req, res) => {
+    Currencies.find().then(currencies => {
+        res.send(currencies)
     })
 })
 
