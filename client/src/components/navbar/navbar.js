@@ -22,14 +22,13 @@ class navbar extends React.Component{
 
 
     render(){
-      console.log(this.state)
         return(
   <Navbar  expand="lg" className="navbar">
   <Navbar.Brand href="/"><strong className="link">TRIFT</strong></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
-      <NavLink className=" nav-link link" to="/">Home</NavLink>
+      <NavLink className=" nav-link link" to="/home">Home</NavLink>
       <NavLink className=" nav-link link" to="/Experience">Experiences</NavLink>
       <NavLink className=" nav-link link" to="/Create-a-trip">Create a Trip</NavLink>
       <NavLink className="nav-link link" to="/Login">Login</NavLink>

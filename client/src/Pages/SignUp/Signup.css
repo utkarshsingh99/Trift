@@ -1,0 +1,56 @@
+.profileImage{
+    display: none;
+}
+
+.custom-file-upload{
+    border: 1px solid lightgrey;
+    width:100%;
+    padding:0.5rem;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    display: flex;
+}
+
+#profilePlaceholder{
+    padding-left:0.2rem;
+    color:grey;
+    font-weight: 400;
+}
+
+#uploadIcon{
+    color:grey;
+    padding:0.1rem;
+    margin-left:auto;
+}
+
+#profileImage{
+    width:4rem;
+    height:4rem;
+    background-color:white;
+    border-radius: 4rem;
+}
+
+/* @media screen and (max-width:576px){
+    #profilePlaceholder{
+        margin-right:14rem;
+    }
+}
+
+@media screen and (max-width:500px){
+    #profilePlaceholder{
+        margin-right:12rem;
+    }
+}
+
+@media screen and (max-width:450px){
+    #profilePlaceholder{
+        margin-right:10rem;
+    }
+}
+
+@media screen and (max-width:400px){
+    #profilePlaceholder{
+        margin-right:8rem;
+    }
+} */

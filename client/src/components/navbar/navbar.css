@@ -1,4 +1,5 @@
 .navbar{
+    padding:1.5rem;
     position: absolute;
     top:0;
     width:100%;
@@ -11,12 +12,25 @@
 
 .link{
     text-decoration: none;
-    color:black
 }
-
+.navbar-nav,.nav-link{
+    padding: 0.2rem 0.4rem;
+}
+.navbar-brand{
+    padding-left:0.4rem;
+}
+.navbar-toggler{
+    border: none;
+}
 a:hover{
     text-decoration: none;
     color:red;
+}
+
+@media (min-width:992px){
+    .link{
+        color:black !important;
+    }
 }
 
 @media (max-width:992px){
@@ -24,5 +38,35 @@ a:hover{
         position: relative;
         width:100%;
         z-index:0;
+        padding:0.2rem;
+        color:black;
     }
 }
+
+
+@media (max-width:576px){
+    .navbar-brand{
+        font-size: 1.1rem;
+    }
+    .navbar-toggler{
+        transform: scale(0.75)
+    }
+    .link{
+        font-size: 0.9rem;
+        margin:0;
+    }
+}
+
+@media (max-width:400px){
+    .navbar-brand{
+        font-size: 1rem;
+    }
+    .navbar{
+        padding:none;
+    }
+    .link{
+        font-size: 0.8rem;
+        margin:0;
+    }
+}
+
