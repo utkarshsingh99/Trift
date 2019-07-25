@@ -9,6 +9,7 @@ const Partners = require('../../database/models/partners')
 const Cities = require('../../database/models/city')
 const Countries = require('../../database/models/country')
 const Currencies = require('../../database/models/currencies')
+const Languages = require('../../database/models/languages')
 
 router.get('/experience', (req, res) => {
     Trips.find({}).sort({_id: -1}).limit(6).then(trips => {
@@ -31,6 +32,12 @@ router.get('/cities', (req, res) => {
 router.get('/countries', (req, res) => {
     Countries.find({}, {"Code": 1, "Name": 1, "Continent": 1, "Region": 1}).then(countries => {
         res.send(countries)
+    })
+})
+
+router.get('/languages', (req, res) => {
+    Languages.find({}, {"CountryCode": 1, "Language": 1}).then(languages => {
+        res.send(languages)
     })
 })
 
